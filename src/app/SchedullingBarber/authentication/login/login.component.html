@@ -1,1 +1,15 @@
-<p>login works!</p>
+<form>
+  <div class="form-group">
+    <h3>Login do Sistema</h3>
+  </div>
+  <div class="form-group">
+    <label for="Login">E-mail</label>
+    <input type="email" class="form-control" [(ngModel)]="authRequest.email" id="Login" name="Login" placeholder="Insira seu email">
+  </div>
+  <div class="form-group">
+    <label for="password">Senha</label>
+    <input type="password" class="form-control" [(ngModel)]="authRequest.password" id="password" name="password" placeholder="Insira sua senha">
+  </div>
+
+  <button type="button" class="btn btn-primary" (click)="login()">Acessar</button>
+</form>
