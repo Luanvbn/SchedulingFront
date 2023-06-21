@@ -13,3 +13,34 @@
 
   <button type="button" class="btn btn-primary" (click)="login()">Acessar</button>
 </form>
+
+
+<button type="button" class="btn btn-primary" (click)="getClient()">Acessar</button>
+
+<div class='table'>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#Id</th>
+        <th scope="col">Nome</th>
+        <th scope="col">Sexo</th>
+        <th scope="col">Nascimento</th>
+        <th scope='col'>Email</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">{{client.name}}</th>
+      </tr>
+      <tr>
+        <th scope="row">{{client.sex}}</th>
+      </tr>
+      <tr>
+        <th scope="row">{{client.birthday}}</th>
+      </tr>
+      <tr>
+        <th scope="row">{{client.access.email}}</th>
+      </tr>
+    </tbody>
+  </table>
+</div>
