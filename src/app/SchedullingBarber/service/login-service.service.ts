@@ -11,8 +11,13 @@ import { Client } from '../model/client.model'
 export class LoginService {
   constructor(private http: HttpClient) {}
 
+  headers = new Headers({
+    'Content-Type': 'application/json',
+    Accept: 'application/json',
+  })
+
   login(authenticationRequest: AuthenticationRequest) {
-    return this.http.post(AppConstants.baseLogin, JSON.stringify(authenticationRequest)).subscribe((data) => {
+    return this.http.post(AppConstants.baseLogin, authenticationRequest).subscribe((data) => {
       /* Retorno HTTP */
       console.info(JSON.parse(JSON.stringify(data)))
     })
