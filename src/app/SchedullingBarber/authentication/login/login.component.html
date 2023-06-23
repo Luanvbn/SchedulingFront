@@ -1,49 +1,24 @@
-<form>
-  <div class="form-group">
-    <h3>Login do Sistema</h3>
+<div class="sidenav">
+  <div class="login-main-text">
+     <h2><b>Schedulling Barber</b><br></h2>
+     <p>Faça login ou registre-se aqui para acessar.</p>
   </div>
-  <div class="form-group">
-    <label for="Login">E-mail</label>
-    <input type="email" class="form-control" [(ngModel)]="authRequest.email" id="Login" name="Login" placeholder="Insira seu email">
+</div>
+<div class="main">
+  <div class="col-md-6 col-sm-12">
+     <div class="login-form">
+        <form>
+           <div class="form-group">
+              <label>User Name</label>
+              <input type="text" class="form-control" placeholder="User Name">
+           </div>
+           <div class="form-group">
+              <label>Password</label>
+              <input type="password" class="form-control" placeholder="Password">
+           </div>
+           <button type="submit" class="btn btn-black">Login</button>
+           <button type="submit" class="btn btn-secondary">Register</button>
+        </form>
+     </div>
   </div>
-  <div class="form-group">
-    <label for="password">Senha</label>
-    <input type="password" class="form-control" [(ngModel)]="authRequest.password" id="password" name="password" placeholder="Insira sua senha">
-  </div>
-
-  <button type="button" class="btn btn-primary" (click)="login()">Acessar</button>
-</form>
-
-
-<button type="button" class="btn btn-primary" (click)="getClient()">Acessar</button>
-
-<div class='table'>
-  <table class="table">
-    <thead>
-      <tr>
-        <th scope="col">#Id</th>
-        <th scope="col">Nome</th>
-        <th scope="col">Sexo</th>
-        <th scope="col">Nascimento</th>
-        <th scope='col'>Email</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <th scope="row">{{client.id}}</th>
-      </tr>
-      <tr>
-        <th scope="row">{{client.name}}</th>
-      </tr>
-      <tr>
-        <th scope="row">{{client.sex}}</th>
-      </tr>
-      <tr>
-        <th scope="row">{{client.birthday}}</th>
-      </tr>
-      <tr>
-        <th scope="row">{{client.access.email}}</th>
-      </tr>
-    </tbody>
-  </table>
 </div>
