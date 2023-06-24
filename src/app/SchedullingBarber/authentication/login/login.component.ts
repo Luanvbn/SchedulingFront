@@ -1,7 +1,9 @@
+import { AuthService } from './../../service/AuthService.service'
 import { AuthenticationRequest } from '../../model/AuthenticationRequest.model'
 import { Client } from '../../model/client.model'
-import { LoginService } from './../../service/login-service.service'
+
 import { Component, OnInit } from '@angular/core'
+import { Router } from '@angular/router'
 
 @Component({
   selector: 'app-login',
@@ -10,22 +12,16 @@ import { Component, OnInit } from '@angular/core'
 })
 export class LoginComponent implements OnInit {
   authRequest: AuthenticationRequest = new AuthenticationRequest()
-  client: Client
-  constructor(private loginService: LoginService) {}
+  constructor(private authService: AuthService, private router: Router) {}
 
-  ngOnInit(): void {
-    this.getClient
-  }
+  ngOnInit(): void {}
 
   public login() {
-    this.loginService.login(this.authRequest)
-  }
-
-  public getClient() {
-    this.loginService.client().subscribe((client: Client) => {
-      this.client = client
-      console.log(this.client)
-      // Qualquer outro código que dependa do valor do cliente deve ser colocado aqui
+    this.authService.login(this.authRequest).subscribe((result) => {
+      if (result) {
+        console.log(result)
+        this.router.navigate([''])
+      }
     })
   }
 }

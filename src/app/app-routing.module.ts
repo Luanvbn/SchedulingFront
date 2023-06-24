@@ -8,7 +8,8 @@ import { LoginComponent } from './SchedullingBarber/authentication/login/login.c
 import { RegisterComponent } from './SchedullingBarber/authentication/register/register.component';
 
 const routes: Routes = [
-  { path: '', component: HomeComponent, canActivate: [AuthGuard] },
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  { path: 'home', component: HomeComponent, canActivate: [AuthGuard] },
   {
     path: '',
     component: AuthenticationComponent,
@@ -18,7 +19,7 @@ const routes: Routes = [
       { path: 'register', component: RegisterComponent },
     ],
   },
-];
+]
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
