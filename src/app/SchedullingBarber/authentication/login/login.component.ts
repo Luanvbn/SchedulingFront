@@ -20,7 +20,20 @@ export class LoginComponent implements OnInit {
     this.authService.login(this.authRequest).subscribe((result) => {
       if (result) {
         console.log(result)
-        this.router.navigate([''])
+        switch (this.authService.whatAuthority()) {
+          case 'ROLE_ADMIN': {
+            this.router.navigate(['admin'])
+            break
+          }
+          case 'ROLE_BARBER': {
+            this.router.navigate(['barber'])
+            break
+          }
+          case 'ROLE_CLIENT': {
+            this.router.navigate(['client'])
+            break
+          }
+        }
       }
     })
   }
