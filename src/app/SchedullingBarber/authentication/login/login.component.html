@@ -17,7 +17,7 @@
               <input type="password" class="form-control" placeholder="Insira sua senha" [(ngModel)]="authRequest.password" name='password'>
            </div>
            <button type="submit" class="btn btn-black" (click)="login()">Login</button>
-           <button type="submit" class="btn btn-secondary">Register</button>
+           <button type="submit" class="btn btn-secondary"routerLink="/register" routerLinkActive="selected">Register</button>
         </form>
      </div>
   </div>

@@ -9,9 +9,6 @@ body {
   background: #FFF;
 
 }
-button{
-  margin-right: 15px;
-}
 
 .sidenav {
 
@@ -82,4 +79,5 @@ button{
 .btn-black{
   background-color: #000 !important;
   color: #fff;
+  margin-right: 15px;
 }

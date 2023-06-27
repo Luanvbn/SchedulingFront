@@ -45,7 +45,7 @@ export class AuthService {
     return this.loggedIn || localStorage.getItem('token') !== null
   }
 
-  /* Lembrar de passar esse valor do whatAuthority para o Login.component para redirecionar o tipo de login */
+
 
   whatAuthority() {
     const decodedToken = this.decodePayloadJWT()
