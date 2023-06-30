@@ -5,7 +5,7 @@
   </div>
 </div>
 <div class="main">
-  <div class="col-md-6 col-sm-12">
+  <div class="col-md-7 col-sm-12">
      <div class="login-form">
       <div class='form-inline'>
         <div class="form-check">
@@ -26,11 +26,11 @@
         <form *ngIf="selectedOptionForForm === '1'">
           <div class="form-group">
             <label>Nome: </label>
-            <input type="email" class="form-control" placeholder="Insira seu email" name='name'>
+            <input type="email" class="form-control" placeholder="Insira seu email" [(ngModel)]="barber.name" name='name'>
           </div>
           <div class="form-group">
             <label>Sexo:  </label>
-            <select class="form-control" aria-label="Selecione uma opção" name='sex'>
+            <select class="form-control" aria-label="Selecione uma opção" [(ngModel)]="barber.sex" name='sex'>
               <option selected disabled>Selecione uma opção</option>
               <option value="MASCULINO">Masculino</option>
               <option value="FEMININO">Feminino</option>
@@ -38,19 +38,60 @@
           </div>
           <div class="form-group">
             <label>Telefone:  </label>
-            <input type="text" class="form-control" placeholder="Insira seu número de telefone" name="phone" [(ngModel)]="phoneNumber" (ngModelChange)="formatPhoneNumber()" maxlength="15">
+            <input type="text" class="form-control" placeholder="Insira seu número de telefone" [(ngModel)]="barber.phone" name="phone" [(ngModel)]="phoneNumber" (ngModelChange)="formatPhoneNumber()" maxlength="15">
+          </div>
+
+          <div class="form-group">
+            <label>Endereço:  </label>
+            <input type="text" class="form-control" placeholder="Insira seu endereço aqui" [(ngModel)]="barber.address" name="address" >
+          </div>
+
+          <div class="form-group">
+            <label>Data de Nascimento:  </label>
+            <input type="date" class="form-control" placeholder="Insira sua data de Nascimento" [(ngModel)]="barber.birthday"name="birthday" >
           </div>
 
            <div class="form-group">
               <label>Email: </label>
-              <input type="email" class="form-control" placeholder="Insira seu email"name='email'>
+              <input type="email" class="form-control" placeholder="Insira seu email" [(ngModel)]="barber.access.email"name='email'>
            </div>
            <div class="form-group">
               <label>Password</label>
-              <input type="password" class="form-control" placeholder="Insira sua senha"  name='password'>
+              <input type="password" class="form-control" placeholder="Insira sua senha" [(ngModel)]="barber.access.password" name='password'>
            </div>
-           <button type="submit" class="btn btn-black">Login</button>
-           <button type="submit" class="btn btn-secondary">Register</button>
+           <button type="submit" class="btn btn-black">Registrar</button>
+           <a class='JaCadastrado' [routerLink]="['/login']" routerLinkActive="router-link-active">Já é cadastrado? Fazer login</a>
+        </form>
+
+        <form *ngIf="selectedOptionForForm === '2'">
+          <div class="form-group">
+            <label>Nome: </label>
+            <input type="email" class="form-control" placeholder="Insira seu email" [(ngModel)]="client.name" name='name'>
+          </div>
+          <div class="form-group">
+            <label>Sexo:  </label>
+            <select class="form-control" aria-label="Selecione uma opção" [(ngModel)]="client.sex" name='sex'>
+              <option selected disabled>Selecione uma opção</option>
+              <option value="MASCULINO">Masculino</option>
+              <option value="FEMININO">Feminino</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label>Data de Nascimento:  </label>
+            <input type="date" class="form-control" placeholder="Insira sua data de Nascimento" [(ngModel)]="client.birthday" name="birthday" >
+          </div>
+
+           <div class="form-group">
+              <label>Email: </label>
+              <input type="email" class="form-control" placeholder="Insira seu email" [(ngModel)]="client.access.email" name='email'>
+           </div>
+           <div class="form-group">
+              <label>Password</label>
+              <input type="password" class="form-control" placeholder="Insira sua senha" [(ngModel)]="client.access.password" name='password'>
+           </div>
+           <button type="submit" class="btn btn-black">Registrar</button>
+           <a class='JaCadastrado' [routerLink]="['/login']" routerLinkActive="router-link-active"><span>Já é cadastrado? Fazer login</span></a>
         </form>
      </div>
   </div>

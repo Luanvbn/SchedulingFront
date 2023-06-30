@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core'
+import { AuthService } from '../../service/AuthService.service'
+import { Barber } from '../../model/barber.model'
+import { Client } from '../../model/client.model'
 
 @Component({
   selector: 'app-register',
@@ -8,9 +11,19 @@ import { Component, OnInit } from '@angular/core'
 export class RegisterComponent implements OnInit {
   selectedOptionForForm: string
   phoneNumber: string
+  barber: Barber = new Barber()
+  client: Client = new Client()
+
+  constructor(private authService: AuthService) {}
 
   ngOnInit(): void {
     this.selectedOptionForForm = '1'
+  }
+
+  public register() {
+    if (this.selectedOptionForForm == '1') {
+    } else {
+    }
   }
 
   formatPhoneNumber(): void {

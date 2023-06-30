@@ -24,6 +24,12 @@ body {
 
 .main {
   padding: 00px 00px;
+
+}
+
+.col-md-7 {
+  left: 215px;
+  bottom: 200px !important;
 }
 
 @media screen and (max-height: 450px) {
@@ -43,6 +49,7 @@ body {
 @media screen and (min-width: 768px){
   .main{
       margin-left: 40%;
+
   }
 
   .sidenav{
@@ -74,6 +81,10 @@ body {
 
 .login-main-text h2{
   font-weight: 500;
+}
+
+.JaCadastrado{
+  margin-left: 274px;
 }
 
 .btn-black{
