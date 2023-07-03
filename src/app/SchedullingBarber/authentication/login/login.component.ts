@@ -4,6 +4,7 @@ import { Client } from '../../model/client.model'
 
 import { Component, OnInit } from '@angular/core'
 import { Router } from '@angular/router'
+import { FormGroup, FormBuilder, Validators } from '@angular/forms'
 
 @Component({
   selector: 'app-login',
@@ -12,29 +13,39 @@ import { Router } from '@angular/router'
 })
 export class LoginComponent implements OnInit {
   authRequest: AuthenticationRequest = new AuthenticationRequest()
-  constructor(private authService: AuthService, private router: Router) {}
+  loginForm: FormGroup
 
-  ngOnInit(): void {}
+  constructor(private authService: AuthService, private router: Router, private formBuilder: FormBuilder) {}
+
+  ngOnInit(): void {
+    this.loginForm = this.formBuilder.group({
+      email: ['', [Validators.required, Validators.email]],
+      password: ['', Validators.required],
+    })
+  }
 
   public login() {
-    this.authService.login(this.authRequest).subscribe((result) => {
-      if (result) {
-        console.log(result)
-        switch (this.authService.whatAuthority()) {
-          case 'ROLE_ADMIN': {
-            this.router.navigate(['admin'])
-            break
-          }
-          case 'ROLE_BARBER': {
-            this.router.navigate(['barber'])
-            break
-          }
-          case 'ROLE_CLIENT': {
-            this.router.navigate(['client'])
-            break
+    if (this.loginForm.valid) {
+      this.authRequest = this.loginForm.value
+      this.authService.login(this.authRequest).subscribe((result) => {
+        if (result) {
+          console.log(result)
+          switch (this.authService.whatAuthority()) {
+            case 'ROLE_ADMIN': {
+              this.router.navigate(['admin'])
+              break
+            }
+            case 'ROLE_BARBER': {
+              this.router.navigate(['barber'])
+              break
+            }
+            case 'ROLE_CLIENT': {
+              this.router.navigate(['client'])
+              break
+            }
           }
         }
-      }
-    })
+      })
+    }
   }
 }

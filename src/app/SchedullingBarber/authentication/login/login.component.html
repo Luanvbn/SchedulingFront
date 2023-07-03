@@ -7,18 +7,18 @@
 <div class="main">
   <div class="col-md-6 col-sm-12">
      <div class="login-form">
-        <form>
-           <div class="form-group">
-              <label>Email: </label>
-              <input type="email" class="form-control" placeholder="Insira seu email" [(ngModel)]="authRequest.email" name='email'>
-           </div>
-           <div class="form-group">
-              <label>Password</label>
-              <input type="password" class="form-control" placeholder="Insira sua senha" [(ngModel)]="authRequest.password" name='password'>
-           </div>
-           <button type="submit" class="btn btn-black" (click)="login()">Login</button>
-           <button type="submit" class="btn btn-secondary"routerLink="/register" routerLinkActive="selected">Register</button>
-        </form>
+      <form [formGroup]="loginForm" (ngSubmit)="login()">
+        <div class="form-group">
+          <label>Email: </label>
+          <input type="email" class="form-control" placeholder="Insira seu email" formControlName="email">
+        </div>
+        <div class="form-group">
+          <label>Password</label>
+          <input type="password" class="form-control" placeholder="Insira sua senha" formControlName="password">
+        </div>
+        <button type="submit" class="btn btn-black">Login</button>
+        <button type="submit" class="btn btn-secondary"routerLink="/register" routerLinkActive="selected">Registrar</button>
+      </form>
      </div>
   </div>
 </div>
