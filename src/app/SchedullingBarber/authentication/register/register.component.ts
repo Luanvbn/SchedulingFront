@@ -20,7 +20,12 @@ export class RegisterComponent implements OnInit {
 
   ngOnInit(): void {
     this.selectedOptionForForm = '1'
+    console.log(this.barber)
     this.formRegister()
+  }
+
+  onOptionChange() {
+    this.registerForm.reset() // Limpar o formulário
   }
 
   formRegister() {
@@ -46,8 +51,25 @@ export class RegisterComponent implements OnInit {
   }
   public register() {
     if (this.selectedOptionForForm == '1') {
-      console.log(this.registerForm)
+      this.barber.name = this.registerForm.value.name
+      this.barber.sex = this.registerForm.value.sex
+      this.barber.phone = this.registerForm.value.phone
+      this.barber.address = this.registerForm.value.address
+      this.barber.birthday = this.registerForm.value.birthday
+      this.barber.access = {
+        email: this.registerForm.value.access_email,
+        password: this.registerForm.value.access_password,
+      }
+      console.log(this.barber)
     } else {
+      this.client.name = this.registerForm.value.name
+      this.client.sex = this.registerForm.value.sex
+      this.client.birthday = this.registerForm.value.birthday
+      this.client.access = {
+        email: this.registerForm.value.access_email,
+        password: this.registerForm.value.access_password,
+      }
+      console.log(this.client)
     }
   }
 }
