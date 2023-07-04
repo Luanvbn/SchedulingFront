@@ -60,7 +60,18 @@ export class RegisterComponent implements OnInit {
         email: this.registerForm.value.access_email,
         password: this.registerForm.value.access_password,
       }
-      console.log(this.barber)
+      this.authService.registerBarber(this.barber).subscribe(
+        (result) => {
+          if (result) {
+            console.log('Registro do Barber realizado com sucesso!')
+          }
+          // Limpar o formulário, se necessário
+          this.registerForm.reset()
+        },
+        (error) => {
+          console.error('Erro ao realizar o registro do Barber:', error)
+        }
+      )
     } else {
       this.client.name = this.registerForm.value.name
       this.client.sex = this.registerForm.value.sex
@@ -69,6 +80,18 @@ export class RegisterComponent implements OnInit {
         email: this.registerForm.value.access_email,
         password: this.registerForm.value.access_password,
       }
+      this.authService.registerClient(this.client).subscribe(
+        (result) => {
+          if (result) {
+            console.log('Registro do Client realizado com sucesso!')
+          } // Limpar o formulário, se necessário
+          this.registerForm.reset()
+        },
+        (error) => {
+          // Lide com o erro de registro, se necessário
+          console.error('Erro ao realizar o registro do Client:', error)
+        }
+      )
       console.log(this.client)
     }
   }

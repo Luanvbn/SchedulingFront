@@ -5,6 +5,8 @@ import { environment } from 'src/environments/environment'
 import { tap } from 'rxjs'
 import { AuthenticationRequest } from '../model/AuthenticationRequest.model'
 import jwtDecode from 'jwt-decode'
+import { Barber } from '../model/barber.model'
+import { Client } from '../model/client.model'
 @Injectable({
   providedIn: 'root',
 })
@@ -20,6 +22,26 @@ export class AuthService {
         localStorage.setItem('token', response.token)
         console.log(this.whatAuthority())
         console.log(response.token)
+      })
+    )
+  }
+
+  registerBarber(data: Barber) {
+    return this.http.post(this.apiUrl + '/auth/registerBarber', data).pipe(
+      tap((response: any) => {
+        // Lide com a resposta do backend, se necessário
+        console.log('Registro do Barber realizado com sucesso!')
+        console.log(response)
+      })
+    )
+  }
+
+  registerClient(data: Client) {
+    return this.http.post(this.apiUrl + '/auth/registerClient', data).pipe(
+      tap((response: any) => {
+        // Lide com a resposta do backend, se necessário
+        console.log('Registro do Client realizado com sucesso!')
+        console.log(response)
       })
     )
   }
@@ -44,8 +66,6 @@ export class AuthService {
   isAuthenticated(): boolean {
     return this.loggedIn || localStorage.getItem('token') !== null
   }
-
-
 
   whatAuthority() {
     const decodedToken = this.decodePayloadJWT()
