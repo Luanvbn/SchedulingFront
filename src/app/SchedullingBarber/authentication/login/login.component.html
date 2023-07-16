@@ -7,6 +7,12 @@
 <div class="main">
   <div class="col-md-6 col-sm-12">
      <div class="login-form">
+
+       <!--Alerta de erro de login-->
+      <div *ngIf="errorResponse" class="alert alert-danger" role="alert">
+        {{ errorResponse }}
+      </div>
+
       <form [formGroup]="loginForm" (ngSubmit)="login()">
         <div class="form-group">
           <label>Email: </label>
