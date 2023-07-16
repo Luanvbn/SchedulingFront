@@ -55,7 +55,8 @@ body {
 
   .login-form{
       margin-top: 53%;
-      margin-left: 10%;
+      margin-left: 55%;
+      width: 90%;
   }
 
   .register-form{
