@@ -1,17 +1,15 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { HomeComponent } from './SchedullingBarber/Components/home/home.component';
-import { AuthenticationComponent } from './SchedullingBarber/authentication/authentication.component';
-import { AuthGuard } from './SchedullingBarber/authentication/guard/auth-guard.guard';
-import { LoginComponent } from './SchedullingBarber/authentication/login/login.component';
-import { RegisterComponent } from './SchedullingBarber/authentication/register/register.component';
+import { AuthenticationComponent } from './SchedullingBarber/authentication/authentication.component'
+import { AuthGuard } from './SchedullingBarber/authentication/guard/auth-guard.guard'
+import { LoginComponent } from './SchedullingBarber/authentication/login/login.component'
+import { RegisterComponent } from './SchedullingBarber/authentication/register/register.component'
 import { BarberComponent } from './SchedullingBarber/Components/barber/barber.component'
 import { ClientComponent } from './SchedullingBarber/Components/client/client.component'
 import { AdminComponent } from './SchedullingBarber/Components/admin/admin.component'
 
 const routes: Routes = [
-  { path: 'home', component: HomeComponent, canActivate: [AuthGuard] },
   { path: 'barber', component: BarberComponent, canActivate: [AuthGuard] },
   { path: 'client', component: ClientComponent, canActivate: [AuthGuard] },
   { path: 'admin', component: AdminComponent, canActivate: [AuthGuard] },

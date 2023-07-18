@@ -1,0 +1,45 @@
+.vertical-nav {
+  min-width: 290px;
+  width: 290px;
+  height: 919px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  box-shadow: 1px 0px 1px rgba(0, 0, 0, 0.1);
+  transition: all 0.4s;
+}
+
+.page-content {
+  width: calc(100% - 17rem);
+  margin-left: 17rem;
+  transition: all 0.4s;
+}
+
+/* for toggle behavior */
+
+#sidebar.active {
+  margin-left: -272px;
+}
+
+#content.active {
+  width: 100%;
+  margin: 0px;
+}
+
+
+@media (max-width: 768px) {
+  #sidebar {
+    margin-left: -272px;
+  }
+  #sidebar.active {
+    margin-left: 0;
+  }
+  #content {
+    width: 100%;
+    margin: 0;
+  }
+  #content.active {
+    margin-left: 17rem;
+    width: calc(100% - 17rem);
+  }
+}
