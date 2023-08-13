@@ -1,0 +1,36 @@
+.barber{
+  margin-left: 300px;
+}
+
+.card{
+  font-family: 'Poppins', sans-serif;
+  border-radius: 5px;
+  box-shadow: 10px 10px 13px 0 rgba(50,50,50,0.20);
+  padding: 20px;
+  margin: 20px;
+  width: 400px;
+  transition: all 0.3s ease-out;
+}
+
+.row{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card:hover{
+  transform: translateY(-5px);
+  cursor: pointer;
+}
+
+.card p {
+  color: #a3a5ae;
+  font-size: 16px;
+}
+
+.image {
+  float: right;
+  max-width: 64px;
+  max-height: 64px;
+}
+
