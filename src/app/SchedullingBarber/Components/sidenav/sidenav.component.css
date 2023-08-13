@@ -7,6 +7,26 @@
   left: 0;
   box-shadow: 1px 0px 1px rgba(0, 0, 0, 0.1);
   transition: all 0.4s;
+  background-color: #261914;
+}
+
+.media-body{
+  color: #A63E26;
+}
+.edit-account{
+  padding-left: 0px;
+  padding-bottom: 0px;
+  padding-top: 2px;
+}
+
+.nav-link:hover, .nav-link a.active{
+  color: #A67153;
+  font-style: bold;
+}
+
+.nav-link{
+  color: #D9BEB4;
+  font-style: bold;
 }
 
 .page-content {
@@ -15,6 +35,21 @@
   transition: all 0.4s;
 }
 
+/* Estilos para o rodapé dentro do vertical-nav */
+.vertical-nav footer {
+  background-color: #261914;
+  color: #D9BEB4;
+  padding: 10px;
+  text-align: center;
+  font-size: 12px;
+  position: absolute; /* Adicione esta linha */
+  bottom: 0; /* Adicione esta linha */
+  width: 100%; /* Adicione esta linha para ocupar a largura completa */
+}
+
+.vertical-nav footer p {
+  margin: 0;
+}
 /* for toggle behavior */
 
 #sidebar.active {
