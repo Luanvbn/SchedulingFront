@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core'
-import { MatButtonModule } from '@angular/material/button'
-import { MatSelectModule } from '@angular/material/select'
-import { MatFormFieldModule } from '@angular/material/form-field'
-import { MatSidenavModule } from '@angular/material/sidenav'
+import { FaIconLibrary } from '@fortawesome/angular-fontawesome'
+import { faHome, faInfoCircle } from '@fortawesome/free-solid-svg-icons'
+import { faCalendar, faHandScissors, faPenToSquare } from '@fortawesome/free-regular-svg-icons'
 
 @Component({
   selector: 'sidenav',
@@ -10,6 +9,11 @@ import { MatSidenavModule } from '@angular/material/sidenav'
   styleUrls: ['./sidenav.component.css'],
 })
 export class SidenavComponent implements OnInit {
+  faHome = faHome
+  faCalendar = faCalendar
+  faHandScissors = faHandScissors
+  faInfoCircle = faInfoCircle
+  faPenToSquare = faPenToSquare
   constructor() {}
 
   ngOnInit() {}
