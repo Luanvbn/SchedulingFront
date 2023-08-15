@@ -1,5 +1,3 @@
-
-
 .barber{
   margin-left: 300px;
 }
@@ -12,7 +10,36 @@
   margin: 20px;
   width: 400px;
   transition: all 0.3s ease-out;
+  max-height: 200px;
+  display: flex;
+	flex-direction: column;
+	gap: 20px;
 }
+.card-name{
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+p {
+	margin: 0;
+	padding: 0;
+	line-height: 0.8;
+}
+
+p.service {
+  max-height: 50px;
+
+}
+
+.service {
+	font-size: 48px;
+}
+
+.quantity {
+  font-weight: bold;
+	font-size: 100px;
+}
+
 
 .row{
   display: flex;
@@ -25,14 +52,10 @@
   cursor: pointer;
 }
 
-.card p {
-  color: #a3a5ae;
-  font-size: 16px;
-}
-
 .image {
-  float: right;
+  float: left;
   max-width: 64px;
   max-height: 64px;
+  margin-bottom: -30px;
 }
 
