@@ -2,19 +2,30 @@
   margin-left: 300px;
 }
 
-.card{
+.card, .card-schedule, .card-timeline{
   font-family: 'Poppins', sans-serif;
   border-radius: 5px;
+  border: 1px solid rgba(0,0,0,0.125);
   box-shadow: 10px 10px 13px 0 rgba(50,50,50,0.20);
   padding: 20px;
-  margin: 20px;
-  width: 400px;
+  margin: 40px;
+  width: 500px;
   transition: all 0.3s ease-out;
   max-height: 200px;
   display: flex;
 	flex-direction: column;
 	gap: 20px;
 }
+.card-timeline{
+  width: 500px;
+  max-height: none;
+}
+.card-schedule{
+  margin-left: 570px;
+  margin-top: -215px;
+
+}
+
 .card-name{
   display: flex;
   justify-content: space-between;
@@ -25,13 +36,64 @@ p {
 	padding: 0;
 	line-height: 0.8;
 }
+.card-timeline p{
+  color: #4f4f4f;
+  font-family: sans-serif;
+  line-height: 1.5;
+  margin-top:7px
+}
+
+.sessions{
+  margin-top: 3rem;
+  position: relative;
+}
+
+
+.time{
+    color: #2a2839;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+}
+
+li {
+  padding-left: 0px;
+  padding-bottom: 2rem;
+  border-left: 3px solid #261914;
+  position: relative;
+  padding-left: 0px;
+  margin-left: 10px;
+  left: -13px;
+  &:last-child{
+    border: 0px;
+    padding-bottom: 0;
+  }
+  &:before{
+    content: '';
+    width: 15px;
+    height: 15px;
+    background: white;
+    border: 1px solid #4e5ed3;
+    box-shadow: 3px 3px 0px #bab5f8;
+    box-shadow: 3px 3px 0px #bab5f8;
+    border-radius: 50%;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+  }
+}
 
 p.service {
   max-height: 50px;
-
 }
 
 .service {
+	font-size: 48px;
+}
+
+p.service-schedule{
+  max-height: 50px;
+}
+.service-schedule {
 	font-size: 48px;
 }
 
@@ -47,7 +109,7 @@ p.service {
   justify-content: center;
 }
 
-.card:hover{
+.card:hover, .card-schedule:hover, .card-timeline:hover{
   transform: translateY(-5px);
   cursor: pointer;
 }
@@ -58,4 +120,20 @@ p.service {
   max-height: 64px;
   margin-bottom: -30px;
 }
+
+ul, li{
+  list-style: none;
+  padding-left: 10px;
+}
+ul{
+  padding-left: 0px;
+}
+
+.card-timeline h1{
+  max-height: 50px;
+  line-height: 1;
+  font-size: 48px;
+  font-family: 'Poppins', sans-serif;
+}
+
 
