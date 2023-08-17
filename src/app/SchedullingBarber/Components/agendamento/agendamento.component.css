@@ -1,0 +1,28 @@
+.schedule{
+  margin-left: 350px;
+  margin-top: 20vh;
+}
+.card-name{
+    font-family: 'Poppins', sans-serif;
+    border-radius: 5px;
+    border: 1px solid rgba(0,0,0,0.125);
+    box-shadow: 10px 10px 13px 0 rgba(50,50,50,0.20);
+    padding: 20px;
+    margin: 50px;
+    width: 150vh;
+}
+.card-table {
+  font-family: 'Poppins', sans-serif;
+  border-radius: 5px;
+  border: 1px solid rgba(0,0,0,0.125);
+  box-shadow: 10px 10px 13px 0 rgba(50,50,50,0.20);
+  padding: 20px;
+  margin: 50px;
+  width: 150vh;
+
+  transition: all 0.3s ease-out;
+  max-height: 600px;
+  display: flex;
+	flex-direction: column;
+	gap: 20px;
+}

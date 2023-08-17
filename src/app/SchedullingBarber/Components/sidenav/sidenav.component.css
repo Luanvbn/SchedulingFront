@@ -1,7 +1,7 @@
 .vertical-nav {
   min-width: 290px;
   width: 290px;
-  height: 919px;
+  height: 100vh;
   position: fixed;
   top: 0;
   left: 0;
@@ -63,6 +63,10 @@
 #content.active {
   width: 100%;
   margin: 0px;
+}
+
+.active {
+  color:#593122
 }
 
 

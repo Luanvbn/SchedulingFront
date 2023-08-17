@@ -1,5 +1,6 @@
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { AgendamentoComponent } from './SchedullingBarber/Components/agendamento/agendamento.component'
+import { NgModule } from '@angular/core'
+import { RouterModule, Routes } from '@angular/router'
 
 import { AuthenticationComponent } from './SchedullingBarber/authentication/authentication.component'
 import { AuthGuard } from './SchedullingBarber/authentication/guard/auth-guard.guard'
@@ -13,6 +14,7 @@ const routes: Routes = [
   { path: 'barber', component: BarberComponent, canActivate: [AuthGuard] },
   { path: 'client', component: ClientComponent, canActivate: [AuthGuard] },
   { path: 'admin', component: AdminComponent, canActivate: [AuthGuard] },
+  { path: 'schedule', component: AgendamentoComponent, canActivate: [AuthGuard] },
   {
     path: '',
     component: AuthenticationComponent,

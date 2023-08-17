@@ -1,5 +1,11 @@
 .barber{
+  margin-top:50px;
   margin-left: 300px;
+}
+
+.sidenav{
+  position:fixed;
+  z-index: 1;
 }
 
 .card, .card-schedule, .card-timeline{
@@ -63,23 +69,6 @@ li {
   padding-left: 0px;
   margin-left: 10px;
   left: -13px;
-  &:last-child{
-    border: 0px;
-    padding-bottom: 0;
-  }
-  &:before{
-    content: '';
-    width: 15px;
-    height: 15px;
-    background: white;
-    border: 1px solid #4e5ed3;
-    box-shadow: 3px 3px 0px #bab5f8;
-    box-shadow: 3px 3px 0px #bab5f8;
-    border-radius: 50%;
-    position: absolute;
-    left: 0px;
-    top: 0px;
-  }
 }
 
 p.service {
