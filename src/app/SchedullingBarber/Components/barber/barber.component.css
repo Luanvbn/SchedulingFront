@@ -8,7 +8,8 @@
   z-index: 1;
 }
 
-.card, .card-schedule, .card-timeline{
+
+ .card-timeline{
   font-family: 'Poppins', sans-serif;
   border-radius: 5px;
   border: 1px solid rgba(0,0,0,0.125);
@@ -26,11 +27,10 @@
   width: 500px;
   max-height: none;
 }
-.card-schedule{
-  margin-left: 570px;
-  margin-top: -215px;
 
-}
+
+
+
 
 .card-name{
   display: flex;
@@ -71,25 +71,24 @@ li {
   left: -13px;
 }
 
+
 p.service {
   max-height: 50px;
 }
-
 .service {
-	font-size: 48px;
+	font-size: 35px;
+  margin-left: 5rem;
+  margin-top: 1rem;
 }
-
-p.service-schedule{
-  max-height: 50px;
-}
-.service-schedule {
-	font-size: 48px;
-}
-
 .quantity {
+  margin-left: 24rem;
   font-weight: bold;
 	font-size: 100px;
 }
+
+
+
+
 
 
 .row{

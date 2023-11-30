@@ -14,10 +14,11 @@ import { AdminComponent } from './SchedullingBarber/Components/admin/admin.compo
 import { SidenavComponent } from './SchedullingBarber/Components/sidenav/sidenav.component'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { AgendamentoComponent } from './SchedullingBarber/Components/agendamento/agendamento.component' /* Requisições Ajax */
+import { AgendamentoComponent } from './SchedullingBarber/Components/agendamento/agendamento.component'; /* Requisições Ajax */
+import { CardWithValuesComponent } from './SchedullingBarber/Components/cards/cardWithValues/cardWithValues.component'
 
 @NgModule({
-  declarations: [AppComponent, BarberComponent, ClientComponent, AdminComponent, SidenavComponent, AgendamentoComponent],
+  declarations: [AppComponent, BarberComponent, ClientComponent, AdminComponent, SidenavComponent, AgendamentoComponent, CardWithValuesComponent],
   imports: [BrowserModule, AppRoutingModule, AuthModule, HttpClientModule, BrowserAnimationsModule, FontAwesomeModule],
   providers: [],
   bootstrap: [AppComponent],

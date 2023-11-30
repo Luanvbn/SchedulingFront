@@ -1,25 +1,13 @@
 <sidenav class='sidenav'></sidenav>
 
 <div class='barber'>
-  <div class = 'card'>
-    <div>
-      <img class='image' src='assets/img/barbearia.png'>
-    </div>
-    <div class = 'card-name'>
-      <p class='service'><b>Serviços</b></p>
-      <p class='quantity'>3</p>
-    </div>
-  </div>
 
-  <div class = 'card-schedule' routerLink="/schedule">
-    <div>
-      <img class='image' src='assets/img/schedule.png'>
-    </div>
-    <div class = 'card-name'>
-      <p class='service-schedule'><b>Agenda Diaria</b></p>
-      <p class='quantity'>7</p>
-    </div>
-  </div>
+  <cardWithValues class="card-service" iconImage="assets/img/barbearia.png" nomeCampo="Serviços" valor="10" cssQuantity="23rem" routerLink="/service"></cardWithValues>
+
+  <cardWithValues class="card-schedule" iconImage="assets/img/schedule.png" nomeCampo="Agenda Diária" valor="13" cssQuantity="23rem" routerLink="/schedule"></cardWithValues>
+
+  <cardWithValues class="card-estimated" iconImage="assets/img/money-bag.png" nomeCampo="Estimativa do Dia" valor="5" cssQuantity="25rem" routerLink="/schedule"></cardWithValues>
+
 
   <div class = 'card-timeline' routerLink="/schedule">
     <div class="container">

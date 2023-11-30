@@ -1,0 +1,45 @@
+.card {
+  font-family: 'Poppins', sans-serif;
+  border-radius: 5px;
+  border: 1px solid rgba(0,0,0,0.125);
+  box-shadow: 10px 10px 13px 0 rgba(50,50,50,0.20);
+  padding: 20px;
+  margin: 40px;
+  width: 500px;
+  transition: all 0.3s ease-out;
+  max-height: 200px;
+  display: flex;
+	flex-direction: column;
+	gap: 20px;
+}
+
+p {
+	margin: 0;
+	padding: 0;
+	line-height: 0.8;
+}
+.card-name{
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+p.service{
+  max-height: 50px;
+}
+.service {
+	font-size: 35px;
+  margin-left: 5rem;
+  margin-top: 1rem;
+}
+
+.card:hover, .card-schedule:hover, .card-timeline:hover{
+  transform: translateY(-5px);
+  cursor: pointer;
+}
+
+.image {
+  float: left;
+  max-width: 64px;
+  max-height: 64px;
+  margin-bottom: -30px;
+}
