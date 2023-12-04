@@ -4,7 +4,9 @@
   border: 1px solid rgba(0,0,0,0.125);
   box-shadow: 10px 10px 13px 0 rgba(50,50,50,0.20);
   padding: 20px;
-  margin: 40px;
+  margin-left: 15px;
+  margin-top: 15px;
+  margin-bottom: 15px;
   width: 500px;
   transition: all 0.3s ease-out;
   max-height: 200px;
@@ -31,8 +33,16 @@ p.service{
   margin-left: 5rem;
   margin-top: 1rem;
 }
+.quantity {
+  transform: translateX(20rem);
+  font-weight: bold;
+  font-size: 90px;
+  word-wrap: break-word;
+  max-width: 80%; /* Ajuste conforme necessário */
 
-.card:hover, .card-schedule:hover, .card-timeline:hover{
+}
+
+.card:hover, .card-schedule:hover{
   transform: translateY(-5px);
   cursor: pointer;
 }

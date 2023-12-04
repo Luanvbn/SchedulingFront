@@ -3,10 +3,10 @@ import { Injectable } from '@angular/core'
 import { environment } from 'src/environments/environment'
 
 import { tap } from 'rxjs'
-import { AuthenticationRequest } from '../model/AuthenticationRequest.model'
+import { AuthenticationRequest } from '../../model/AuthenticationRequest.model'
 import jwtDecode from 'jwt-decode'
-import { Barber } from '../model/barber.model'
-import { Client } from '../model/client.model'
+import { Barber } from '../../model/barber.model'
+import { Client } from '../../model/client.model'
 @Injectable({
   providedIn: 'root',
 })

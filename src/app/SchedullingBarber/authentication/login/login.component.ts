@@ -1,4 +1,4 @@
-import { AuthService } from './../../service/AuthService.service'
+import { AuthService } from '../../service/auth/AuthService.service'
 import { AuthenticationRequest } from '../../model/AuthenticationRequest.model'
 import { Client } from '../../model/client.model'
 
