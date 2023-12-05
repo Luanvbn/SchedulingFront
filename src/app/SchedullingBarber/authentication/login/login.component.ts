@@ -53,6 +53,10 @@ export class LoginComponent implements OnInit {
         },
         (error) => {
           this.errorResponse = 'Login ou senha incorreta!'
+          const tempoAtraso: number = 3000;
+          setTimeout(()=>{
+            this.errorResponse = null;
+          }, tempoAtraso);
         }
       )
     }
