@@ -95,15 +95,17 @@
                 <label class="text-sm font-semibold px-1">Phone: </label>
                 <div class="flex">
                   <div class="w-10 z-10 pl-1 text-center pointer-events-none flex items-center justify-center"><i class="mdi mdi-cellphone-iphone text-gray-400 text-lg"></i></div>
-                  <input mask="(00) 0000-0000||(00) 0 0000-0000"
+                  <input
+                    pattern="^[0-9]+$"
                     [ngClass]="aplicaCSS('phone')"
-                    type="email"
+                    type="text"
+                    maxlength="11"
                     class="form-control w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-amber-950"
                     placeholder="Insira seu número de Telefone"
                     formControlName="phone"
                   />
                 </div>
-                <div *ngIf="this.validTouched('phone')" class="text-xs align-text-top font-semibold text-red-600">Insira seu número de telefone</div>
+                <div *ngIf="this.validTouched('phone')" class="text-xs align-text-top font-semibold text-red-600">O número de telefone deve ter no mínimo 8 digítos</div>
               </div>
             </div>
 
@@ -113,12 +115,14 @@
                 <div class="flex">
                   <div class="w-10 z-10 pl-1 text-center pointer-events-none flex items-center justify-center"><i class="mdi mdi-home-map-marker text-gray-400 text-lg"></i></div>
                   <input
-                    type="email"
+                    [ngClass]="aplicaCSS('address')"
+                    type="text"
                     class="form-control w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-amber-950"
                     placeholder="Insira seu endereço"
                     formControlName="address"
                   />
                 </div>
+                <div *ngIf="this.validTouched('address')" class="text-xs align-text-top font-semibold text-red-600">Digite seu endereço</div>
               </div>
             </div>
 
@@ -128,12 +132,14 @@
                 <div class="flex">
                   <div class="w-10 z-10 pl-1 text-center pointer-events-none flex items-center justify-center"><i class="mdi mdi-email-outline text-gray-400 text-lg"></i></div>
                   <input
+                    [ngClass]="aplicaCSS('access_email')"
                     type="email"
                     class="form-control w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-amber-950"
                     placeholder="Insira seu email"
                     formControlName="access_email"
                   />
                 </div>
+                <div *ngIf="this.validTouched('access_email')" class="text-xs align-text-top font-semibold text-red-600">Por favor, informe o email de login</div>
               </div>
             </div>
 
@@ -143,18 +149,21 @@
                 <div class="flex">
                   <div class="w-10 z-10 pl-1 text-center pointer-events-none flex items-center justify-center"><i class="mdi mdi-lock-outline text-gray-400 text-lg"></i></div>
                   <input
+                    [ngClass]="aplicaCSS('access_password')"
                     type="password"
                     class="form-control w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-amber-950"
                     placeholder="Insira sua senha"
                     formControlName="access_password"
                   />
                 </div>
+                <div *ngIf="this.validTouched('access_password')" class="text-xs align-text-top font-semibold text-red-600">Sua senha informada precisa ter no minimo 8 digitos</div>
+
               </div>
             </div>
 
             <div class="flex justify-between">
               <div class="w-40 mr-36">
-                <button type="submit" class="block w-full max-w-xs mx-auto bg-amber-950 hover:bg-amber-700 focus:bg-amber-700 text-white rounded-lg px-3 py-2.5 font-semibold">
+                <button [disabled]="!this.registerForm.valid" type="submit" class="block w-full max-w-xs mx-auto bg-amber-950 hover:bg-amber-700 focus:bg-amber-700 text-white rounded-lg px-3 py-2.5 font-semibold">
                   Register
                 </button>
               </div>
