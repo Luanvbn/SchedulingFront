@@ -29,11 +29,13 @@ export class LoginComponent implements OnInit {
   }
 
   aplicaCSS(campo) {
-    return { 'border-red-600': this.validTouched(campo) }
+    const result = { 'border-red-600': this.validTouched(campo) }
+    return result
   }
 
   validTouched(campo: any) {
-    return !this.loginForm.get(campo).valid && this.loginForm.get(campo).touched
+    const result = !this.loginForm.get(campo).valid && this.loginForm.get(campo).touched
+    return result
   }
 
   public login() {

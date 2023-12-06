@@ -58,7 +58,12 @@
             </div>
             <div class="flex justify-between">
               <div class="w-40 mr-36">
-                <button [disabled]="!this.loginForm.valid" class="block w-full max-w-xs mx-auto bg-amber-950 hover:bg-amber-700 focus:bg-amber-700 text-white rounded-lg px-3 py-2.5 font-semibold">Login</button>
+                <button
+                  [disabled]="!this.loginForm.valid"
+                  class="block w-full max-w-xs mx-auto bg-amber-950 hover:bg-amber-700 focus:bg-amber-700 text-white rounded-lg px-3 py-2.5 font-semibold"
+                >
+                  Login
+                </button>
               </div>
               <div class="flex items-end">
                 <a href="/register" class="text-amber-950 underline">Registre-se</a>

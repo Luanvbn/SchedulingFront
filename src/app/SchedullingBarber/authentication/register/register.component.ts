@@ -43,13 +43,12 @@ export class RegisterComponent implements OnInit {
   }
 
   aplicaCSS(campo) {
-    return { 'border-red-600': this.validTouched(campo) }
+    return { 'border-red-600': this.validTouched(campo)}
   }
 
   validTouched(campo: any) {
     return !this.registerForm.get(campo).valid && this.registerForm.get(campo).touched
   }
-
 
   public register() {
     const person: Person = {
@@ -72,10 +71,9 @@ export class RegisterComponent implements OnInit {
       }
       this.authService.registerBarber(barber).subscribe(
         (result) => {
-          console.log('Registro do Barber realizado com sucesso!', result),
-          this.onOptionChange()
+          console.log('Registro do Barber realizado com sucesso!', result), this.onOptionChange()
           setTimeout(() => {
-            this.router.navigate[('login')]
+            this.router.navigate['login']
           }, 5000)
         },
         (error) => console.error('Erro ao realizar o registro do Barber:', error)
@@ -84,10 +82,9 @@ export class RegisterComponent implements OnInit {
       this.client = { ...person }
       this.authService.registerClient(this.client).subscribe(
         (result) => {
-          console.log('Registro do Client realizado com sucesso!', result),
-          this.onOptionChange()
+          console.log('Registro do Client realizado com sucesso!', result), this.onOptionChange()
           setTimeout(() => {
-            this.router.navigate[('login')]
+            this.router.navigate['login']
           }, 5000)
         },
 
