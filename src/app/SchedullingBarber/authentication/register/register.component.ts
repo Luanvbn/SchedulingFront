@@ -4,6 +4,7 @@ import { Barber } from '../../model/barber.model'
 import { Client } from '../../model/client.model'
 import { FormBuilder, FormGroup, Validators } from '@angular/forms'
 import { Person } from '../../model/person.model'
+import { Router } from '@angular/router'
 
 @Component({
   selector: 'app-register',
@@ -16,7 +17,7 @@ export class RegisterComponent implements OnInit {
   client: Client = new Client()
   registerForm: FormGroup
 
-  constructor(private authService: AuthService, private formBuilder: FormBuilder) {}
+  constructor(private authService: AuthService, private router: Router, private formBuilder: FormBuilder) {}
 
   ngOnInit(): void {
     console.log(this.barber)
@@ -30,7 +31,7 @@ export class RegisterComponent implements OnInit {
 
   formRegister() {
     this.registerForm = this.formBuilder.group({
-      name: ['', Validators.required],
+      name: ['', [Validators.required, Validators.minLength(3)]],
       sex: ['', Validators.required],
       phone: ['', Validators.required],
       address: ['', Validators.required],
@@ -41,9 +42,14 @@ export class RegisterComponent implements OnInit {
     })
   }
 
-  ValidTouched(campo: any) {
+  aplicaCSS(campo) {
+    return { 'border-red-600': this.validTouched(campo) }
+  }
+
+  validTouched(campo: any) {
     return !this.registerForm.get(campo).valid && this.registerForm.get(campo).touched
   }
+
 
   public register() {
     const person: Person = {
@@ -65,13 +71,26 @@ export class RegisterComponent implements OnInit {
         servicos: [],
       }
       this.authService.registerBarber(barber).subscribe(
-        (result) => console.log('Registro do Barber realizado com sucesso!', result),
+        (result) => {
+          console.log('Registro do Barber realizado com sucesso!', result),
+          this.onOptionChange()
+          setTimeout(() => {
+            this.router.navigate[('login')]
+          }, 5000)
+        },
         (error) => console.error('Erro ao realizar o registro do Barber:', error)
       )
     } else {
       this.client = { ...person }
       this.authService.registerClient(this.client).subscribe(
-        (result) => console.log('Registro do Client realizado com sucesso!', result),
+        (result) => {
+          console.log('Registro do Client realizado com sucesso!', result),
+          this.onOptionChange()
+          setTimeout(() => {
+            this.router.navigate[('login')]
+          }, 5000)
+        },
+
         (error) => console.error('Erro ao realizar o registro do Client:', error)
       )
     }

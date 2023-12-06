@@ -15,7 +15,7 @@ import { SidenavComponent } from './SchedullingBarber/Components/sidenav/sidenav
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { AgendamentoComponent } from './SchedullingBarber/Components/agendamento/agendamento.component'; /* Requisições Ajax */
-import { CardWithValuesComponent } from './SchedullingBarber/Components/cards/cardWithValues/cardWithValues.component'
+import { CardWithValuesComponent } from './SchedullingBarber/Components/cards/cardWithValues/cardWithValues.component';
 
 @NgModule({
   declarations: [AppComponent, BarberComponent, ClientComponent, AdminComponent, SidenavComponent, AgendamentoComponent, CardWithValuesComponent],

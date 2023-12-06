@@ -28,12 +28,15 @@
                 <div class="flex">
                   <div class="w-10 z-10 pl-1 text-center pointer-events-none flex items-center justify-center"><i class="mdi mdi-email-outline text-gray-400 text-lg"></i></div>
                   <input
+                    [ngClass]="aplicaCSS('email')"
                     type="email"
-                    class="form-control w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-indigo-500"
+                    class="form-control w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-amber-950"
                     placeholder="Insira seu email"
                     formControlName="email"
+                    [(ngModel)]="authRequest.email"
                   />
                 </div>
+                <div *ngIf="this.validTouched('email')" class="text-xs align-text-top font-semibold text-red-600">Por favor, informe o email de login</div>
               </div>
             </div>
             <div class="flex -mx-4">
@@ -42,22 +45,24 @@
                 <div class="flex">
                   <div class="w-10 z-10 pl-1 text-center pointer-events-none flex items-center justify-center"><i class="mdi mdi-lock-outline text-gray-400 text-lg"></i></div>
                   <input
+                    [ngClass]="aplicaCSS('password')"
                     type="password"
-                    class="form-control w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-indigo-500"
+                    class="form-control w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-amber-950"
                     placeholder="Insira sua senha"
                     formControlName="password"
+                    [(ngModel)]="authRequest.password"
                   />
                 </div>
+                <div *ngIf="this.validTouched('password')" class="text-xs align-text-top font-semibold text-red-600">Sua senha informada precisa ter no minimo 8 digitos</div>
               </div>
             </div>
             <div class="flex justify-between">
               <div class="w-40 mr-36">
-                <button type="submit" class="block w-full max-w-xs mx-auto bg-amber-950 hover:bg-amber-700 focus:bg-amber-700 text-white rounded-lg px-3 py-2.5 font-semibold">Login</button>
+                <button [disabled]="!this.loginForm.valid" class="block w-full max-w-xs mx-auto bg-amber-950 hover:bg-amber-700 focus:bg-amber-700 text-white rounded-lg px-3 py-2.5 font-semibold">Login</button>
               </div>
               <div class="flex items-end">
                 <a href="/register" class="text-amber-950 underline">Registre-se</a>
               </div>
-
             </div>
             <!-- <button type="submit" class="btn btn-secondary" routerLink="/register" routerLinkActive="selected">Registrar</button> -->
           </form>

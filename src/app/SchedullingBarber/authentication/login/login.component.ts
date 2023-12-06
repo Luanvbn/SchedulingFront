@@ -23,9 +23,17 @@ export class LoginComponent implements OnInit {
 
   formLogin() {
     this.loginForm = this.formBuilder.group({
-      email: ['', [Validators.required]],
-      password: ['', Validators.required],
+      email: ['', [Validators.required, Validators.email]],
+      password: ['', [Validators.required, Validators.minLength(8)]],
     })
+  }
+
+  aplicaCSS(campo) {
+    return { 'border-red-600': this.validTouched(campo) }
+  }
+
+  validTouched(campo: any) {
+    return !this.loginForm.get(campo).valid && this.loginForm.get(campo).touched
   }
 
   public login() {
@@ -53,10 +61,10 @@ export class LoginComponent implements OnInit {
         },
         (error) => {
           this.errorResponse = 'Login ou senha incorreta!'
-          const tempoAtraso: number = 3000;
-          setTimeout(()=>{
-            this.errorResponse = null;
-          }, tempoAtraso);
+          const tempoAtraso: number = 3000
+          setTimeout(() => {
+            this.errorResponse = null
+          }, tempoAtraso)
         }
       )
     }

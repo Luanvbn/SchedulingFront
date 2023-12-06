@@ -28,12 +28,15 @@
                 <div class="flex">
                   <div class="w-10 z-10 pl-1 text-center pointer-events-none flex items-center justify-center"><i class="mdi mdi-account-outline text-gray-400 text-lg"></i></div>
                   <input
+                    [ngClass]="aplicaCSS('name')"
                     type="text"
                     class="form-control w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-amber-950"
                     placeholder="Insira seu nome"
                     formControlName="name"
+                    [(ngModel)]="this.registerForm.value.name"
                   />
                 </div>
+                <div *ngIf="this.validTouched('name')" class="text-xs align-text-top font-semibold text-red-600">O Nome deve conter pelo menos de três digitos</div>
               </div>
             </div>
 
@@ -43,15 +46,18 @@
                 <div class="flex">
                   <div class="w-10 z-10 pl-1 text-center pointer-events-none flex items-center justify-center"><i class="mdi mdi-account-box text-gray-400 text-lg"></i></div>
                   <select
+                    [ngClass]="aplicaCSS('typeUser')"
                     class="form-control w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-amber-950"
                     aria-label="Selecione uma opção"
                     formControlName="typeUser"
+                    [(ngModel)]="this.registerForm.value.typeUser"
                   >
                     <option value="" selected disabled>Escolha o tipo de usuário</option>
                     <option value="Barber">Barber</option>
                     <option value="Client">Client</option>
                   </select>
                 </div>
+                <div *ngIf="this.validTouched('typeUser')" class="text-xs align-text-top font-semibold text-red-600">Selecione o tipo de usuário</div>
               </div>
             </div>
 
@@ -61,22 +67,26 @@
                 <div class="flex">
                   <div class="w-10 z-10 pl-1 text-center pointer-events-none flex items-center justify-center"><i class="mdi mdi-gender-transgender text-gray-400 text-lg"></i></div>
                   <select
+                    [ngClass]="aplicaCSS('sex')"
                     class="form-control w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-amber-950"
                     aria-label="Selecione uma opção"
                     formControlName="sex"
+                    [(ngModel)]="this.registerForm.value.sex"
                   >
                     <option value="" selected disabled>Escolha o sexo</option>
                     <option value="MASCULINO">Masculino</option>
                     <option value="FEMININO">Feminino</option>
                   </select>
                 </div>
+                <div *ngIf="this.validTouched('sex')" class="text-xs align-text-top font-semibold text-red-600">Selecione o sexo biológico</div>
               </div>
               <div class="form-group w-1/2 px-3 mb-2">
                 <label class="text-sm font-semibold px-1">Birthday: </label>
                 <div class="flex">
                   <div class="w-10 z-10 pl-1 text-center pointer-events-none flex items-center justify-center"><i class="mdi mdi-calendar text-gray-400 text-lg"></i></div>
-                  <input type="date" class="form-control w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-amber-950" formControlName="birthday" />
+                  <input [ngClass]="aplicaCSS('birthday')" type="date" class="form-control w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-amber-950" formControlName="birthday" />
                 </div>
+                <div *ngIf="this.validTouched('birthday')" class="text-xs align-text-top font-semibold text-red-600">Selecione a sua data de Nascimento</div>
               </div>
             </div>
 
@@ -85,13 +95,15 @@
                 <label class="text-sm font-semibold px-1">Phone: </label>
                 <div class="flex">
                   <div class="w-10 z-10 pl-1 text-center pointer-events-none flex items-center justify-center"><i class="mdi mdi-cellphone-iphone text-gray-400 text-lg"></i></div>
-                  <input
+                  <input mask="(00) 0000-0000||(00) 0 0000-0000"
+                    [ngClass]="aplicaCSS('phone')"
                     type="email"
                     class="form-control w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-amber-950"
                     placeholder="Insira seu número de Telefone"
                     formControlName="phone"
                   />
                 </div>
+                <div *ngIf="this.validTouched('phone')" class="text-xs align-text-top font-semibold text-red-600">Insira seu número de telefone</div>
               </div>
             </div>
 
