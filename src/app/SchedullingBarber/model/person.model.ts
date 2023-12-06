@@ -1,3 +1,4 @@
+import { Access } from './access.model';
 import { Sex } from "./enum/sex.enum"
 
 export class Person {
@@ -7,4 +8,5 @@ export class Person {
   phone: string
   address: string
   birthday: Date
+  access: Access
 }

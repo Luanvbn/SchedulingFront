@@ -42,7 +42,11 @@
                 <label class="text-sm font-semibold px-1">Type user:</label>
                 <div class="flex">
                   <div class="w-10 z-10 pl-1 text-center pointer-events-none flex items-center justify-center"><i class="mdi mdi-account-box text-gray-400 text-lg"></i></div>
-                  <select class="form-control w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-amber-950" aria-label="Selecione uma opção" formControlName="typeUser">
+                  <select
+                    class="form-control w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-amber-950"
+                    aria-label="Selecione uma opção"
+                    formControlName="typeUser"
+                  >
                     <option value="" selected disabled>Escolha o tipo de usuário</option>
                     <option value="Barber">Barber</option>
                     <option value="Client">Client</option>
@@ -56,7 +60,11 @@
                 <label class="text-sm font-semibold px-1">Sex:</label>
                 <div class="flex">
                   <div class="w-10 z-10 pl-1 text-center pointer-events-none flex items-center justify-center"><i class="mdi mdi-gender-transgender text-gray-400 text-lg"></i></div>
-                  <select class="form-control w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-amber-950" aria-label="Selecione uma opção" formControlName="sex">
+                  <select
+                    class="form-control w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-amber-950"
+                    aria-label="Selecione uma opção"
+                    formControlName="sex"
+                  >
                     <option value="" selected disabled>Escolha o sexo</option>
                     <option value="MASCULINO">Masculino</option>
                     <option value="FEMININO">Feminino</option>
@@ -67,11 +75,7 @@
                 <label class="text-sm font-semibold px-1">Birthday: </label>
                 <div class="flex">
                   <div class="w-10 z-10 pl-1 text-center pointer-events-none flex items-center justify-center"><i class="mdi mdi-calendar text-gray-400 text-lg"></i></div>
-                  <input
-                    type="date"
-                    class="form-control w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-amber-950"
-                    formControlName="birthday"
-                  />
+                  <input type="date" class="form-control w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-amber-950" formControlName="birthday" />
                 </div>
               </div>
             </div>
@@ -138,7 +142,9 @@
 
             <div class="flex justify-between">
               <div class="w-40 mr-36">
-                <button type="submit" class="block w-full max-w-xs mx-auto bg-amber-950 hover:bg-amber-700 focus:bg-amber-700 text-white rounded-lg px-3 py-2.5 font-semibold">Register</button>
+                <button type="submit" class="block w-full max-w-xs mx-auto bg-amber-950 hover:bg-amber-700 focus:bg-amber-700 text-white rounded-lg px-3 py-2.5 font-semibold">
+                  Register
+                </button>
               </div>
               <div class="flex items-end">
                 <a href="" [routerLink]="['/login']" class="text-amber-950 underline">Já é cadastrado? Fazer Login</a>
