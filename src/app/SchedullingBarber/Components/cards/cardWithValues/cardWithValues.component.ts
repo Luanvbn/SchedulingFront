@@ -9,7 +9,6 @@ export class CardWithValuesComponent implements OnInit {
   @Input() iconImage: string;
   @Input() nomeCampo: string;
   @Input() valor: string;
-  @Input() cssQuantity: string;
 
   constructor() { }
 
