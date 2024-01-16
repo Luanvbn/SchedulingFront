@@ -16,9 +16,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { AgendamentoComponent } from './SchedullingBarber/Components/agendamento/agendamento.component'; /* Requisições Ajax */
 import { CardWithValuesComponent } from './SchedullingBarber/Components/cards/cardWithValues/cardWithValues.component';
+import { CardDayViewComponent } from './SchedullingBarber/Components/cards/card-day-view/card-day-view.component';
 
 @NgModule({
-  declarations: [AppComponent, BarberComponent, ClientComponent, AdminComponent, SidenavComponent, AgendamentoComponent, CardWithValuesComponent],
+  declarations: [AppComponent, BarberComponent, ClientComponent, AdminComponent, SidenavComponent, AgendamentoComponent, CardWithValuesComponent, CardDayViewComponent],
   imports: [BrowserModule, AppRoutingModule, AuthModule, HttpClientModule, BrowserAnimationsModule, FontAwesomeModule],
   providers: [],
   bootstrap: [AppComponent],
